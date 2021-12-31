@@ -7,12 +7,12 @@ from operator import itemgetter
 from quant_matrix import QuantizationMatrix
 
 """Defining necessary parameters"""
-def DCT_Classic(blockSize, Q_factor, shift_threshold, path):
-    BLOCK_SIZE = blockSize                         # Block size (8x8)
+def DCT_Classic(Q_factor, shift_threshold, path):
+    BLOCK_SIZE = 8                               # Block size (8x8)
     QF = Q_factor                                # Quality Factor
-    shift_thresh = shift_threshold                        # Threshold for shift vector count
-    stride = 1                               # Sliding window stride count / overlap
-    Q_8x8 = QuantizationMatrix().get_qm(QF)  # 8x8 quantization matrix based on QF
+    shift_thresh = shift_threshold               # Threshold for shift vector count
+    stride = 1                                   # Sliding window stride count / overlap
+    Q_8x8 = QuantizationMatrix().get_qm(QF)      # 8x8 quantization matrix based on QF
 
     """Reading input image"""
 
